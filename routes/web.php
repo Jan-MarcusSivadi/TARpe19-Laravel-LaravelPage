@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get("/test", function () {
     return view('test');
 });
+
+Route::get("/user", "UserController@index");
+
 
 Route::get("/me", function () {
     return "Hello You"; # code

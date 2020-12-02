@@ -1,0 +1,9 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "terminal_run",
+        "command": "echo",
+        "args": ["php artisan serve"],
+        "type": "shell"
+    }]
+}

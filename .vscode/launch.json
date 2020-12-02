@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+        "configurations": [
+            {
+                // ...
+                //"preLaunchTask": "terminal_run", // The name of the task defined above
+                // ...
+
+                "name": "Launch Firefox against localhost",
+                "url": "http://localhost:8000",
+                "type": "firefox",
+                "request": "launch",
+                "reAttach": true,
+                "webRoot": "${workspaceFolder}"
+                
+            }
+            /*
+            {
+                // ...
+                //"preLaunchTask": "mysql_run", // The name of the task defined above
+                // ...
+
+                "name": "Launch MYSQL Server UI against localhost",
+                "url": "http://localhost/phpmyadmin/",
+                "type": "firefox",
+                "request": "launch",
+                "reAttach": true,
+                "webRoot": "${workspaceFolder}"
+                
+            }
+            */
+        ]
+}

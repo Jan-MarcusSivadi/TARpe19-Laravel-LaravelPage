@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "tasks": [{
+        "label": "mysql_run",
+
+        "name": "Launch SQL phpMYADMIN",
+        "url": "http://localhost/phpmyadmin/",
+        "type": "firefox",
+        "request": "launch",
+        "reAttach": true,
+        "webRoot": "${workspaceFolder}"
+    }]
+}

@@ -12,6 +12,7 @@
     <div class="container" style="width: 35%; height: 50vh; margin: 0 auto;">
         <img id="img" src="img/1.png" style="width: 100%;">
         <button id="btn">Click Me</button>
+        <div class="btn_count"></div>
     </div>
     
     <script src="js/app.js"></script>
