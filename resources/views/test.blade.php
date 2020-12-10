@@ -4,14 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test (ON/OFF)</title>
+    <title>Test (Free to play)</title>
 </head>
+
+<style>
+    .btn_count {
+        font-size: 2rem;
+        text-align: center;
+    }
+</style>
 
 <body>
 
     <div class="container" style="width: 35%; height: 50vh; margin: 0 auto;">
-        <img id="img" src="img/1.png" style="width: 100%;">
-        <button id="btn">Click Me</button>
+        <a id="btn" href="#">
+            <img id="img" src="img/1.png" style="width: 100%;">
+        </a>
+        <!--<button id="btn">Click Me</button>-->
         <div class="btn_count"></div>
     </div>
     

@@ -16,10 +16,16 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // Neid välju ei võta vastu (exclude fields)
+    // protected $guarded = [
+    //     'password',
+    // ];
+    // Neid välju võetakse vastu (include fields)
     protected $fillable = [
         'name',
         'email',
         'password',
+        'avatar',
     ];
 
     /**
@@ -27,10 +33,10 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    // protected $hidden = [
+    //     'password',
+    //     'remember_token',
+    // ];
 
     /**
      * The attributes that should be cast to native types.
@@ -40,4 +46,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function uploadAvatar($image) {
+        $avatar = $request->image->getClientOriginalName();
+        $request->image->storeAs('images',$avatar,'public');
+        auth()->user()->update(['avatar' => $avatar]);
+    }
+
+    // public function setPasswordAttribute($value)
+    // {
+    //     // $this->attributes['password'] = bcrypt($value);
+    //     $this->attributes['password'] = $value; 
+    // }
+
+    // public function getNameAttribute($value)
+    // {
+    //     return "My name is: " . ucfirst($value);
+    // }
 }
