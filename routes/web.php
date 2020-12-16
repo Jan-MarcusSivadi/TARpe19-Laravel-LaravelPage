@@ -1,11 +1,17 @@
 <?php
 
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\TodoController;
+
+Route::get("/todos", [TodoController::class, "index"]);
+Route::get("/todos/create", [TodoController::class, "create"]);
+Route::post("/todos/create", [TodoController::class, "store"]);
+Route::get("/todos/edit", [TodoController::class, "edit"]);
+
+
+/*use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
-/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
