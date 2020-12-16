@@ -48,6 +48,7 @@
     <div class="container">
         <h1 class="page-title">What do you need to do next?</h1>
         <hr class="hr-1">
+        <x-alert />
         <form method="post" action="/todos/create">
             @csrf
             <input type="text" name="title" id="item-title">
