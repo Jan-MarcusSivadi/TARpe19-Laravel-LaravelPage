@@ -49,6 +49,15 @@
         <h1 class="page-title">What do you need to do next?</h1>
         <hr class="hr-1">
         <x-alert />
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    {{ $error }}
+                @endforeach
+            </div>
+        @endif
+
+
         <form method="post" action="/todos/create">
             @csrf
             <input type="text" name="title" id="item-title">
