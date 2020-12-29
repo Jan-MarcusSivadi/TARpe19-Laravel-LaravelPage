@@ -10,4 +10,7 @@
         <button type="submit" value="Create" class="btn btn-primary" id="addTitle-btn">Create</button>
         <!-- <input type="submit" value="Create" class="btn btn-primary" id="add-btn"> -->
     </form>
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary" id="addTitle-btn" href="/todos" role="button">Back to List</a>
+    </div>
 @endsection
