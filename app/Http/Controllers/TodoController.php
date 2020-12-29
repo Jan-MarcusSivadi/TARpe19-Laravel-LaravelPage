@@ -29,9 +29,13 @@ class TodoController extends Controller
 
     public function edit(Todo $todo)
     {
-        dd($todo->title);
-        // $todo = Todo::find($id);
         return view('todos.edit', compact('todo'));
+    }
+
+    public function update(Request $request, Todo $todo)
+    {
+        $todo->update(['title' => $request->title]);
+        return redirect(route('todo.index'))->with('message','Todo Updated Successfully');
     }
 
 }

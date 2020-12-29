@@ -10,15 +10,14 @@
     </div>
     <hr class="hr-1">
 
-    </div>
-        <ul class="list-group">
-            @foreach($todos as $todo)
-                <li class="list-group-item d-flex justify-content-between align-items-center" id="vertical-align-item">
-                    {{$todo->title}}
-                    <a class="btn btn-primary" id="addTitle-btn" href="{{'/todos/'.$todo->id.'/edit'}}" role="button">Edit</a>
-                </li>
-            @endforeach
-        </ul>
-    </div>
+    <x-alert />
+    <ul class="list-group">
+        @foreach($todos as $todo)
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="vertical-align-item">
+                {{$todo->title}}
+                <a class="btn btn-primary" id="addTitle-btn" href="{{'/todos/'.$todo->id.'/edit'}}" role="button">Edit</a>
+            </li>
+        @endforeach
+    </ul>
 </div>
 @endsection
