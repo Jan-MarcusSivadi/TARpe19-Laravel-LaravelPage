@@ -42,7 +42,13 @@ class TodoController extends Controller
     public function complete(Todo $todo)
     {
         $todo->update(['completed' => true]);
-        return redirect()->back()->with('message','Task Successfully Marked as Completed!');
+        return redirect()->back()->with('message','Task Marked as Completed!');
+    }
+
+    public function incomplete(Todo $todo)
+    {
+        $todo->update(['completed' => false]);
+        return redirect()->back()->with('message','Task Marked as Incompleted!');
     }
 
 }

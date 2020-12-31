@@ -60,6 +60,14 @@
             border-width:3px !important;
         }
 
+        .icon-create {
+            vertical-align: middle;
+            font-size: 2rem;
+            text-decoration: none!important;
+            color: #0275d8!important;
+            margin-bottom: 1rem;
+        }
+
         .icon1 {
             vertical-align: middle;
             font-size: 1.5rem;
