@@ -16,6 +16,7 @@ class TodoController extends Controller
 
     public function index()
     {
+        //dd(auth()->user()->todos);
         $todos = Todo::orderBy('completed')->get();
         return view('todos.index', compact('todos'));
     }
@@ -29,6 +30,8 @@ class TodoController extends Controller
     {
         // dd(auth()->user()->todos());
         auth()->user()->todos()->create($request->all());
+        //$userId = auth()->id();
+        //$request['user_id'] = $userId;
         // Todo::create($request->all());
         return redirect(route('todo.index'))->with('message','Todo Created Successfully!');
         //return redirect()->back()->with('message','Todo Created Successfully!');
