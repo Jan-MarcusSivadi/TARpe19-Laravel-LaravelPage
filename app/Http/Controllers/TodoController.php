@@ -24,8 +24,8 @@ class TodoController extends Controller
     public function store(TodoCreateRequest $request)
     {
         Todo::create($request->all());
-        // uploading image
-        return redirect()->back()->with('message','Todo Created Successfully');
+        return redirect(route('todo.index'))->with('message','Todo Created Successfully!');
+        //return redirect()->back()->with('message','Todo Created Successfully!');
     }
 
     public function edit(Todo $todo)
@@ -36,7 +36,13 @@ class TodoController extends Controller
     public function update(TodoCreateRequest $request, Todo $todo)
     {
         $todo->update(['title' => $request->title]);
-        return redirect(route('todo.index'))->with('message','Todo Updated Successfully');
+        return redirect(route('todo.index'))->with('message','Todo Updated Successfully!');
+    }
+
+    public function complete(Todo $todo)
+    {
+        $todo->update(['completed' => true]);
+        return redirect()->back()->with('message','Task Successfully Marked as Completed!');
     }
 
 }

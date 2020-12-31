@@ -25,7 +25,12 @@
                     @if($todo->completed)
                         <i class="fas fa-check icon2-on"></i>
                     @else
-                        <i class="fas fa-check icon2-off cursor-pointer"></i>
+                        <i onclick="event.preventDefault(); document.getElementById('form-complete-{{$todo->id}}').submit();" class="fas fa-check icon2-off cursor-pointer"></i>
+                        <form style="display: none" id="{{'form-complete-'.$todo->id}}" method="post" action="{{route('todo.complete',$todo->id)}}">
+                            @csrf
+                            @method('put')
+
+                        </form>
                     @endif
                 </div>
             </li>
