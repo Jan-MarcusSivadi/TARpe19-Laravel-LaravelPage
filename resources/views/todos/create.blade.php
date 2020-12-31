@@ -7,7 +7,7 @@
     <form class="d-flex justify-content-center" method="post" action="/todos/create">
         @csrf
         <input type="text" name="title" id="item-title">
-        <button type="submit" value="Create" class="btn btn-primary" id="addTitle-btn">Create</button>
+        <button type="submit" value="Create" class="btn btn-primary" id="Default-btn">Create</button>
         <!-- <input type="submit" value="Create" class="btn btn-primary" id="add-btn"> -->
     </form>
     <div class="d-flex justify-content-center">

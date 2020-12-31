@@ -6,6 +6,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/3d8af50c2d.js" crossorigin="anonymous"></script>
     <!-- Style CSS -->
     <!-- <link rel="stylesheet" href="public/css/style.css"> -->
     <title>Todos</title>
@@ -38,7 +41,14 @@
         #addTitle-btn {
             vertical-align: middle;
             margin: 0.5rem;
+            margin-bottom: 1.5rem;
             /* padding: 0.5rem 2rem 0.5rem 2rem; */
+            font-size: 1.2rem;
+        }
+
+        #Default-btn {
+            vertical-align: middle;
+            margin: 0.5rem;
             font-size: 1.2rem;
         }
 
@@ -46,10 +56,43 @@
             vertical-align: middle;
         }
 
+        .border-1 {
+            border-width:3px !important;
+        }
+
+        .icon1 {
+            vertical-align: middle;
+            font-size: 1.5rem;
+            text-decoration: none!important;
+            color: orange!important;
+        }
+
+        .icon2-on {
+            vertical-align: middle;
+            font-size: 1.5rem;
+            padding-left: 1rem;
+            padding-right: 0.5rem;
+            color: green;
+        }
+        .icon2-off {
+            vertical-align: middle;
+            font-size: 1.5rem;
+            padding-left: 1rem;
+            padding-right: 0.5rem;
+            color: #E5E5E5;
+        }
+        .icon2-on:hover, .icon2-off:hover {
+            cursor:pointer;
+        }
+
+        
+
     </style>
 
-    <div class="mx-auto container">
-        @yield('content')
+    <div class="mx-auto container" style="margin: 5rem">
+        <div class="border-1 border rounded p-4">
+            @yield('content')
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
