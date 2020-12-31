@@ -13,6 +13,9 @@ class TodoController extends Controller
     {
         $todos = Todo::orderBy('completed')->get();
         // return $todos;
+        // if($todos->isEmpty()){
+        //     return 'hello';
+        // } 
         return view('todos.index', compact('todos'));
     }
 
@@ -49,6 +52,12 @@ class TodoController extends Controller
     {
         $todo->update(['completed' => false]);
         return redirect()->back()->with('message','Task Marked as Incompleted!');
+    }
+
+    public function delete(Todo $todo)
+    {
+        $todo->delete();
+        return redirect()->back()->with('message','Task Deleted!');
     }
 
 }

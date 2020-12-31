@@ -2,50 +2,51 @@
 
 @section('content')
 <div>
-    <h1 class="d-flex justify-content-center page-title">All Your Todos</h1>
+    <h1 class="d-flex justify-content-center page-title">
+        All Your Todos
+        <div class="d-flex justify-content-center buttons">
+            <!-- <a class="btn btn-primary" id="addTitle-btn" href="/todos/create" role="button"></a> -->
+            <a class="fas fa-plus-circle icon-create" href="/todos/create"></a>
+        </div>
+    </h1>
     <hr class="hr-1">
-
-    <div class="d-flex justify-content-center buttons">
-        <!-- <a class="btn btn-primary" id="addTitle-btn" href="/todos/create" role="button"></a> -->
-        <a class="fas fa-plus-circle icon-create" href="/todos/create"></a>
-    </div>
 
     <x-alert />
     <ul class="list-group">
+        
+        <!-- Text for when there are no Tasks -->
+        @if($todos->isEmpty())
+            <div class="d-flex justify-content-center">Empty</div>
+        @endif
+
+        <!-- List of Tasks -->
         @foreach($todos as $todo)
             <li class="list-group-item d-flex justify-content-between align-items-center" id="vertical-align-item">
+            <div>
+                @include('todos.complete-button')
+            </div>
+
                 @if($todo->completed)
                     <s>{{$todo->title}}</s>
                 @else
                     {{$todo->title}}
                 @endif
                 <div>
-                    <!-- <a class="btn btn-primary" id="Default-btn" href="{{'/todos/'.$todo->id.'/edit'}}" role="button"> -->
-                       <a class="fas fa-edit icon1" href="{{'/todos/'.$todo->id.'/edit'}}"></a>
-                    </a>
-                    @if($todo->completed)
-                        <i onclick="event.preventDefault();
-                                document.getElementById('form-incomplete-{{$todo->id}}')
-                                .submit();"
-                                class="fas fa-check icon2-on"></i>
+                    <!-- <a class="btn btn-primary" id="Default-btn" href="{{'/todos/'.$todo->id.'/edit'}}" role="button"></a> -->
+                    <a class="fas fa-edit icon-edit" href="{{'/todos/'.$todo->id.'/edit'}}"></a>
 
-                        <form style="display: none" id="{{'form-incomplete-'.$todo->id}}" method="post" action="{{route('todo.incomplete',$todo->id)}}">
-                            @csrf
-                            @method('delete')
-                        </form>
-                    @else
-                        <i onclick="event.preventDefault();
-                                document.getElementById('form-complete-{{$todo->id}}')
-                                .submit();"
-                                class="fas fa-check icon2-off cursor-pointer"></i>
-
-                        <form style="display: none" id="{{'form-complete-'.$todo->id}}" method="post" action="{{route('todo.complete',$todo->id)}}">
-                            @csrf
-                            @method('put')
-                        </form>
-                    @endif
+                    <a class="fas fa-trash icon-trash" href="{{'/todos/'.$todo->id.'/edit'}}"
+                            data-toggle="modal" data-target="#confirmationModal"></a>
+                    
+                    <form style="display: none" id="{{'form-delete-'.$todo->id}}" method="post" action="{{route('todo.delete',$todo->id)}}">
+                        @csrf
+                        @method('delete')
+                    </form>
                 </div>
             </li>
+
+            <!-- Modal Ask for Deletion Confirmation -->
+            @include('todos.delete-confirm')
         @endforeach
     </ul>
 </div>

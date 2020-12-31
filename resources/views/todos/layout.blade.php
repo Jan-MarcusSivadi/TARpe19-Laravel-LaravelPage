@@ -65,33 +65,45 @@
             font-size: 2rem;
             text-decoration: none!important;
             color: #0275d8!important;
-            margin-bottom: 1rem;
+            /* margin-bottom: 1rem; */
+            padding: 0.8rem;
+            padding-left: 1rem;
         }
 
-        .icon1 {
+        .icon-edit {
             vertical-align: middle;
             font-size: 1.5rem;
             text-decoration: none!important;
             color: orange!important;
         }
 
-        .icon2-on {
+        .icon-trash {
             vertical-align: middle;
             font-size: 1.5rem;
+            text-decoration: none!important;
+            color: red!important;
             padding-left: 1rem;
-            padding-right: 0.5rem;
+        }
+
+        .icon-done-on {
+            vertical-align: middle;
+            font-size: 1.5rem;
+            /* padding-left: 1rem;
+            padding-right: 0.5rem; */
             color: green;
         }
-        .icon2-off {
+        .icon-done-off {
             vertical-align: middle;
             font-size: 1.5rem;
-            padding-left: 1rem;
-            padding-right: 0.5rem;
+            /* padding-left: 1rem;
+            padding-right: 0.5rem; */
             color: #E5E5E5;
         }
-        .icon2-on:hover, .icon2-off:hover {
+        .icon-done-on:hover, .icon-done-off:hover {
             cursor:pointer;
         }
+
+
 
         
 
