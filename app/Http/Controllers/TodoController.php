@@ -9,13 +9,14 @@ use Validator;
 
 class TodoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth'); //->except('index');
+    }
+
     public function index()
     {
         $todos = Todo::orderBy('completed')->get();
-        // return $todos;
-        // if($todos->isEmpty()){
-        //     return 'hello';
-        // } 
         return view('todos.index', compact('todos'));
     }
 

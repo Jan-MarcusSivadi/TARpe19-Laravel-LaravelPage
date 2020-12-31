@@ -1,17 +1,18 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\TodoController;
 
-Route::resource("/todo", TodoController::class);
-// Route::get("/todos", [TodoController::class, "index"])->name('todo.index');
-// Route::get("/todos/create", [TodoController::class, "create"]);
-// Route::post("/todos/create", [TodoController::class, "store"]);
-// Route::get("/todos/{todo}/edit", [TodoController::class, "edit"]);
-// Route::patch("/todos/{todo}/update", [TodoController::class, "update"])->name('todo.update');
+// Route::middleware('auth')->group(function () {
+    Route::resource("/todo", TodoController::class);
+    Route::put("/todos/{todo}/complete", [TodoController::class, "complete"])->name('todo.complete');
+    Route::delete("/todos/{todo}/incomplete", [TodoController::class, "incomplete"])->name('todo.incomplete');
+// });
 
-Route::put("/todos/{todo}/complete", [TodoController::class, "complete"])->name('todo.complete');
-Route::delete("/todos/{todo}/incomplete", [TodoController::class, "incomplete"])->name('todo.incomplete');
-Route::delete("/todos/{todo}/delete", [TodoController::class, "delete"])->name('todo.delete');
 
 
 /*use App\Http\Controllers\UserController;
@@ -32,10 +33,6 @@ Route::get("/test", function () {
 });
 */
 
-use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
 Route::get("/me", function () {
     return "Hello You"; # code
