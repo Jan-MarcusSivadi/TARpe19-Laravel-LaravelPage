@@ -6,7 +6,7 @@
         All Your Todos
         <div class="d-flex justify-content-center buttons">
             <!-- <a class="btn btn-primary" id="addTitle-btn" href="/todos/create" role="button"></a> -->
-            <a class="fas fa-plus-circle icon-create" href="/todos/create"></a>
+            <a class="fas fa-plus-circle icon-create" href="{{route('todo.create')}}"></a>
         </div>
     </h1>
     <hr class="hr-1">
@@ -33,12 +33,12 @@
                 @endif
                 <div>
                     <!-- <a class="btn btn-primary" id="Default-btn" href="{{'/todos/'.$todo->id.'/edit'}}" role="button"></a> -->
-                    <a class="fas fa-edit icon-edit" href="{{'/todos/'.$todo->id.'/edit'}}"></a>
+                    <a class="fas fa-edit icon-edit" href="{{route('todo.edit', $todo->id)}}"></a>
 
-                    <a class="fas fa-trash icon-trash" href="{{'/todos/'.$todo->id.'/edit'}}"
+                    <a class="fas fa-trash icon-trash" href="{{route('todo.edit', $todo->id)}}"
                             data-toggle="modal" data-target="#confirmationModal"></a>
                     
-                    <form style="display: none" id="{{'form-delete-'.$todo->id}}" method="post" action="{{route('todo.delete',$todo->id)}}">
+                    <form style="display: none" id="{{'form-delete-'.$todo->id}}" method="post" action="{{route('todo.destroy',$todo->id)}}">
                         @csrf
                         @method('delete')
                     </form>

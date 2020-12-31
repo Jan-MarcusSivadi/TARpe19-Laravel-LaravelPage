@@ -11,6 +11,6 @@
         <button type="submit" value="Update" class="btn btn-primary" id="Default-btn">Update</button>
     </form>
     <div class="d-flex justify-content-center">
-        <a class="btn btn-primary" id="addTitle-btn" href="/todos" role="button">Back to List</a>
+        <a class="btn btn-primary" id="addTitle-btn" href="{{route('todo.index')}}" role="button">Back to List</a>
     </div>
 @endsection

@@ -4,13 +4,13 @@
     <h1 class="d-flex justify-content-center page-title">What do you need to do next?</h1>
     <hr class="hr-1">
     <x-alert />
-    <form class="d-flex justify-content-center" method="post" action="/todos/create">
+    <form class="d-flex justify-content-center" method="post" action="{{route('todo.store')}}">
         @csrf
         <input type="text" name="title" id="item-title">
         <button type="submit" value="Create" class="btn btn-primary" id="Default-btn">Create</button>
         <!-- <input type="submit" value="Create" class="btn btn-primary" id="add-btn"> -->
     </form>
     <div class="d-flex justify-content-center">
-        <a class="btn btn-primary" id="addTitle-btn" href="/todos" role="button">Back to List</a>
+        <a class="btn btn-primary" id="addTitle-btn" href="{{route('todo.index')}}" role="button">Back to List</a>
     </div>
 @endsection
