@@ -16,15 +16,15 @@
         
         <!-- Text for when there are no Tasks -->
         @if($todos->isEmpty())
-            <div class="d-flex justify-content-center">Empty</div>
+            <div class="d-flex justify-content-center">No tasks available, Create one?</div>
         @endif
 
         <!-- List of Tasks -->
         @foreach($todos as $todo)
             <li class="list-group-item d-flex justify-content-between align-items-center" id="vertical-align-item">
-            <div>
-                @include('todos.complete-button')
-            </div>
+                <div>
+                    @include('todos.complete-button')
+                </div>
 
                 @if($todo->completed)
                     <s>{{$todo->title}}</s>
@@ -35,8 +35,16 @@
                     <!-- <a class="btn btn-primary" id="Default-btn" href="{{'/todos/'.$todo->id.'/edit'}}" role="button"></a> -->
                     <a class="fas fa-edit icon-edit" href="{{route('todo.edit', $todo->id)}}"></a>
 
-                    <a class="fas fa-trash icon-trash" href="{{route('todo.edit', $todo->id)}}"
-                            data-toggle="modal" data-target="#confirmationModal"></a>
+                    <!-- <a class="fas fa-trash icon-trash" href="{{route('todo.edit', $todo->id)}}"></a> -->
+                    <a onclick="event.preventDefault();
+                                    console.log('{{$todo->title}}'); 
+                                    if(confirm('Are you sure you want to delete \'{{$todo->title}}\'?'))
+                                    {
+                                        document.getElementById('form-delete-{{$todo->id}}')
+                                        .submit();
+                                    }"
+                                    class="fas fa-trash icon-trash" href="{{route('todo.edit', $todo->id)}}"
+                                    data-toggle="modal" data-target="#exampleModal"></a>
                     
                     <form style="display: none" id="{{'form-delete-'.$todo->id}}" method="post" action="{{route('todo.destroy',$todo->id)}}">
                         @csrf
@@ -44,9 +52,6 @@
                     </form>
                 </div>
             </li>
-
-            <!-- Modal Ask for Deletion Confirmation -->
-            @include('todos.delete-confirm')
         @endforeach
     </ul>
 </div>
