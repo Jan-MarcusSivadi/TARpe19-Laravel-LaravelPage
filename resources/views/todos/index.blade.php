@@ -27,9 +27,13 @@
                 </div>
 
                 @if($todo->completed)
-                    <s>{{$todo->title}}</s>
+                    <a>
+                        <s>{{$todo->title}}</s>
+                    </a>
                 @else
-                    {{$todo->title}}
+                    <a href="{{route('todo.show', $todo->id)}}" >
+                        {{$todo->title}}
+                    </a>
                 @endif
                 <div>
                     <!-- <a class="btn btn-primary" id="Default-btn" href="{{'/todos/'.$todo->id.'/edit'}}" role="button"></a> -->

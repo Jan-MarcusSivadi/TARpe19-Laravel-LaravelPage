@@ -46,6 +46,13 @@
             width: 500px;
         }
 
+        #show-description {
+            vertical-align: middle;
+            text-align: center;
+            margin: 0.5rem;
+            padding: 0.5rem;
+        }
+
         #addTitle-btn {
             vertical-align: middle;
             margin: 0.5rem;

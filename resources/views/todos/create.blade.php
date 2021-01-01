@@ -12,7 +12,7 @@
         </div>
         <!-- <input type="submit" value="Create" class="btn btn-primary" id="add-btn"> -->
         <div class="d-flex justify-content-center">
-            <textarea name="description" id="item-description" rows="1" cols="50" placeholder="Description"></textarea>
+            <textarea name="description" id="item-description" rows="2" cols="50" placeholder="Description"></textarea>
         </div>
     </form>
         
