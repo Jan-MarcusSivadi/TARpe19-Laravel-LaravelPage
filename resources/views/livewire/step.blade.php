@@ -6,11 +6,11 @@
         </div>
     </h2>
 
-    @for($i = 0; $i < $steps; $i++)
+    @foreach($steps as $step)
         <div class="d-flex justify-content-center">
-            <input type="text" name="title" class="item-step" placeholder="Step {{$i+1}}">
-            <a class="fas fa-trash icon-trashStep cursor-hover"></a>
+            <input type="text" name="step[]" class="item-step" placeholder="{{'Step '.$step}}">
+            <a class="fas fa-trash icon-trashStep cursor-hover" wire:click="remove({{$loop->index}})"></a>
         </div>
-    @endfor
+    @endforeach
     
 </div>
