@@ -6,7 +6,7 @@
         All Your Todos
         <div class="d-flex justify-content-center buttons">
             <!-- <a class="btn btn-primary" id="addTitle-btn" href="/todos/create" role="button"></a> -->
-            <a class="fas fa-plus-circle icon-create" href="{{route('todo.create')}}"></a>
+            <a class="fas fa-plus icon-create" href="{{route('todo.create')}}"></a>
         </div>
     </h1>
     <hr class="hr-1">

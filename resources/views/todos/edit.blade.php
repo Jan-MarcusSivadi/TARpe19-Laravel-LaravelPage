@@ -21,6 +21,6 @@
         
     </form>
     <div class="d-flex justify-content-center">
-        <a class="btn btn-primary" id="addTitle-btn" href="{{route('todo.index')}}" role="button">Back to List</a>
+        <a class="btn btn-primary" id="Back-btn" href="{{route('todo.index')}}" role="button">Back to List</a>
     </div>
 @endsection

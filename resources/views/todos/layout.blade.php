@@ -46,6 +46,13 @@
             width: 500px;
         }
 
+        #item-steps {
+            vertical-align: middle;
+            margin: 0.5rem;
+            padding: 0.5rem;
+            width: 500px;
+        }
+
         #show-description {
             vertical-align: middle;
             text-align: center;
@@ -61,9 +68,24 @@
             font-size: 1.2rem;
         }
 
+        #Back-btn {
+            vertical-align: middle;
+            margin: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            /* padding: 0.5rem 2rem 0.5rem 2rem; */
+            font-size: 1.2rem;
+        }
+
         #Default-btn {
             vertical-align: middle;
             margin: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        #Step-btn {
+            vertical-align: middle;
+            margin-left: 0.5rem;
             font-size: 1.2rem;
         }
 
@@ -83,6 +105,17 @@
             /* margin-bottom: 1rem; */
             padding: 0.8rem;
             padding-left: 1rem;
+        }
+
+        .icon-addStep {
+            vertical-align: middle;
+            font-size: 2rem;
+            text-decoration: none!important;
+            color: #0275d8!important;
+            /* margin-bottom: 1rem; */
+            /* padding: 0.8rem; */
+            padding-left: 1rem;
+            padding-bottom: 0.2rem;
         }
 
         .icon-edit {
