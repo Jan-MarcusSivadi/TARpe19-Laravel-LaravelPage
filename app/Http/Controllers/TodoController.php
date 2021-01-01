@@ -34,9 +34,9 @@ class TodoController extends Controller
 
     public function store(TodoCreateRequest $request)
     {
-        dd($request->all());
+        // dd($request->all());
         // dd(auth()->user()->todos());
-        $authTodo = auth()->user()->todos()->create($request->all());
+        $todo = auth()->user()->todos()->create($request->all());
         // dd($test);
         //$userId = auth()->id();
         //$request['user_id'] = $userId;
