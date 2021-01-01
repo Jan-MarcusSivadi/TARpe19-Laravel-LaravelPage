@@ -10,12 +10,13 @@ class Step extends Component
 
     public function increment()
     {
-        $this->steps[] = count($this->steps)+1;
+        $this->steps[] = count($this->steps);
     }
 
     public function remove($index)
     {
         // dd($this->steps[$index]);
+        //$this->steps[$index]--;
         unset($this->steps[$index]);
     }
 

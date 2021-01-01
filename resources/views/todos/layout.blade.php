@@ -37,7 +37,7 @@
             vertical-align: middle;
             margin: 0.5rem;
             padding: 0.5rem;
-            width: 404px;
+            width: 500px;
         }
 
         #item-description {

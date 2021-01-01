@@ -9,7 +9,6 @@
         @method('patch')
         <div class="d-flex justify-content-center">
             <input type="text" value="{{$todo->title}}" name="title" id="item-title" placeholder="Title">
-            <button type="submit" value="Update" class="btn btn-primary" id="Default-btn">Update</button>
         </div>
         <!-- <input type="submit" value="Create" class="btn btn-primary" id="add-btn"> -->
         <div class="d-flex justify-content-center">
@@ -18,6 +17,10 @@
         
         <!-- @csrf
         <input type="text" value="{{$todo->title}}" name="title" id="item-title"> -->
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" value="Update" class="btn btn-primary" id="Default-btn">Update</button>
+        </div>
         
     </form>
     <div class="d-flex justify-content-center">

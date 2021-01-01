@@ -37,6 +37,11 @@ class TodoController extends Controller
         // dd($request->all());
         // dd(auth()->user()->todos());
         $todo = auth()->user()->todos()->create($request->all());
+        if($request->step) {
+            foreach($request->step as $step) {
+                $todo->steps()->create(['name' => $step]);
+            }
+        }
         // dd($test);
         //$userId = auth()->id();
         //$request['user_id'] = $userId;
@@ -71,6 +76,7 @@ class TodoController extends Controller
 
     public function destroy(Todo $todo)
     {
+        $todo->steps->each->delete();
         $todo->delete();
         return redirect()->back()->with('message','Task Deleted!');
     }
