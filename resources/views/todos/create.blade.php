@@ -24,6 +24,7 @@
             <a class="fas fa-plus icon-addStep" href="{{route('todo.create')}}"></a>
         </div>
     </h2>
+
     <hr class="hr-1">
     <form class="" method="post" action="{{route('todo.store')}}">
         @csrf
@@ -33,6 +34,7 @@
 
 
     </form>
+    <div class="d-flex justify-content-center">@livewire('counter')</div>
         
     <div class="d-flex justify-content-center">
         <a class="btn btn-primary" id="Back-btn" href="{{route('todo.index')}}" role="button">Back to List</a>
