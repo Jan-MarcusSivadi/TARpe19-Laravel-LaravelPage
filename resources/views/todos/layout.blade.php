@@ -90,6 +90,13 @@
             font-size: 1.2rem;
         }
 
+        .item-step {
+            vertical-align: middle;
+            margin: 0.5rem;
+            padding: 0.5rem;
+            width: 404px;
+        }
+
         #vertical-align-item {
             vertical-align: middle;
         }
@@ -117,6 +124,15 @@
             /* padding: 0.8rem; */
             padding-left: 1rem;
             padding-bottom: 0.2rem;
+        }
+
+        .icon-trashStep {
+            vertical-align: middle;
+            font-size: 1.5rem;
+            text-decoration: none!important;
+            color: red!important;
+            padding-top: 1rem;
+            padding-left: 1rem;
         }
 
         .icon-edit {
@@ -150,6 +166,10 @@
         }
         .icon-done-on:hover, .icon-done-off:hover {
             cursor:pointer;
+        }
+
+        .cursor-hover {
+            cursor: pointer;
         }
 
 
