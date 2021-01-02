@@ -18,6 +18,8 @@
         <!-- @csrf
         <input type="text" value="{{$todo->title}}" name="title" id="item-title"> -->
 
+        @livewire('edit-step', ['steps' => $todo->steps])
+
         <div class="d-flex justify-content-center">
             <button type="submit" value="Update" class="btn btn-primary" id="Default-btn">Update</button>
         </div>

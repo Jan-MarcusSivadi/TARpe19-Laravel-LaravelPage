@@ -16,7 +16,7 @@
             <textarea name="description" id="item-description" rows="2" cols="50" placeholder="Description"></textarea>
         </div>
 
-    <hr class="hr-1">
+        <hr class="hr-1">
         @livewire('step')
         <div class="d-flex justify-content-center">
             <button type="submit" value="Create" class="btn btn-primary" id="Default-btn">Create</button>

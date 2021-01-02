@@ -7,18 +7,10 @@
     </h2>
 
     @foreach($steps as $step)
-        <!-- Note: this is my workaround for the delete button error.-->
-        @if($loop->last)
-            <div class="d-flex justify-content-center">
-                <input type="text" name="step[]" class="item-step" placeholder="{{'Step '.($step+1)}}">
-                <a class="fas fa-trash icon-trashStep cursor-hover" wire:click="remove({{$step}})"></a>
-            </div>
-        @else
-            <div class="d-flex justify-content-center">
-                <input type="text" name="step[]" class="item-step" placeholder="{{'Step '.($step+1)}}">
-                <a class="fas fa-trash icon-trashStep cursor-hover" style="visibility: hidden;"></a>
-            </div>
-        @endif
+        <div class="d-flex justify-content-center" wire:key="{{$step}}">
+            <input type="text" name="step[]" class="item-step" placeholder="{{'Step '.($step+1)}}">
+            <a class="fas fa-trash icon-trashStep cursor-hover" wire:click="remove({{$step}})"></a>
+        </div>
     @endforeach
     
 </div>
