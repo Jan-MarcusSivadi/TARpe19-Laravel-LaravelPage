@@ -9,9 +9,15 @@
     @foreach($steps as $step)
         <div class="d-flex justify-content-center" wire:key="{{$loop->index}}">
             @if(isset($step['name']))
-                <input type="text" name="step[]" class="item-step" placeholder="{{'Step '.($loop->index+1)}}" value="{{$step['name']}}">
+                <input type="text" name="stepName[]" class="item-step" placeholder="{{'Step '.($loop->index+1)}}" value="{{$step['name']}}">
             @else
-                <input type="text" name="step[]" class="item-step" placeholder="{{'Step '.($loop->index+1)}}">
+                <input type="text" name="stepName[]" class="item-step" placeholder="{{'Step '.($loop->index+1)}}">
+            @endif
+
+            @if(isset($step['id']))
+                <input type="hidden" name="stepId[]" value="{{$step['id']}}">
+            @else
+                <input type="hidden" name="stepId[]">
             @endif
             
             <a class="fas fa-trash icon-trashStep cursor-hover" wire:click="remove({{$loop->index}})"></a>
